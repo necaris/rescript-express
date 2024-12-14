@@ -1,19 +1,16 @@
 {
   "name": "rescript-express",
-  "version": "0.4.1",
+  "version": "0.5",
   "scripts": {
-    "clean": "bsb -clean-world",
-    "build": "bsb -make-world",
-    "watch": "bsb -make-world -w"
+    "clean": "rescript clean",
+    "build": "rescript build",
+    "watch": "rescript build -w"
   },
-  "keywords": [
-    "ReScript",
-    "express"
-  ],
+  "keywords": ["ReScript", "express"],
   "author": "bloodyowl <bloodyowl@icloud.com>",
   "license": "MIT",
   "devDependencies": {
-    "bs-platform": "^9.0.2",
+    "rescript": "^11.1.4",
     "express": "^4.17.1"
   },
   "peerDependencies": {
