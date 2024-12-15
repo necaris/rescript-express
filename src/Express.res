@@ -9,10 +9,10 @@ type req
 type res
 
 type middleware = (req, res, unit => unit) => unit
-type middlewareAsync = (req, res, unit => promise<unit>) => unit
+// type middlewareAsync = (req, res, unit => promise<unit>) => unit
 type middlewareWithError = (Js.Exn.t, req, res, unit => unit) => unit
-type handler = (req, res) => unit
-type handlerAsync = (req, res) => promise<unit>
+type handler = (req, res) => promise<unit>
+// type handlerAsync = (req, res) => promise<unit>
 
 external asMiddleware: express => middleware = "%identity"
 
@@ -38,19 +38,19 @@ external staticMiddlewareWithOptions: (string, {..}) => middleware = "static"
 @send external useWithPathAndError: (express, string, middlewareWithError) => unit = "use"
 
 @send external get: (express, string, handler) => unit = "get"
-@send external getAsync: (express, string, handlerAsync) => unit = "get"
+// @send external getAsync: (express, string, handlerAsync) => unit = "get"
 @send external post: (express, string, handler) => unit = "post"
-@send external postAsync: (express, string, handlerAsync) => unit = "post"
+// @send external postAsync: (express, string, handlerAsync) => unit = "post"
 @send external delete: (express, string, handler) => unit = "delete"
-@send external deleteAsync: (express, string, handlerAsync) => unit = "delete"
+// @send external deleteAsync: (express, string, handlerAsync) => unit = "delete"
 @deprecated("Express 5.0 deprecates app.del(), use app.delete() instead")
 @send external del: (express, string, handler) => unit = "del"
 @send external patch: (express, string, handler) => unit = "patch"
-@send external patchAsync: (express, string, handlerAsync) => unit = "patch"
+// @send external patchAsync: (express, string, handlerAsync) => unit = "patch"
 @send external put: (express, string, handler) => unit = "put"
-@send external putAsync: (express, string, handlerAsync) => unit = "put"
+// @send external putAsync: (express, string, handlerAsync) => unit = "put"
 @send external all: (express, string, handler) => unit = "all"
-@send external allAsync: (express, string, handlerAsync) => unit = "all"
+// @send external allAsync: (express, string, handlerAsync) => unit = "all"
 
 @send external enable: (express, string) => unit = "enable"
 @send external enabled: (express, string) => bool = "enabled"

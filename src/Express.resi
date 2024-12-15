@@ -10,7 +10,7 @@ type res
 
 type middleware = (req, res, unit => unit) => unit
 type middlewareWithError = (Js.Exn.t, req, res, unit => unit) => unit
-type handler = (req, res) => unit
+type handler = (req, res) => promise<unit>
 
 external asMiddleware: express => middleware = "%identity"
 
